@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Dietitian — About &amp; contact</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  .hd-ph {
+    font-style: normal;
+    color: var(--hd-forest-700);
+    background: var(--hd-lime-300);
+    border-radius: 6px;
+    padding: 0 8px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    white-space: nowrap;
+  }
+  .hd-ph-f {
+    color: var(--hd-lime-400);
+    background: rgba(215,228,168,0.14);
+    border: 1px dashed rgba(215,228,168,0.5);
+  }
+  .hd-link {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--hd-forest-800);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    transition: gap .2s var(--ease-brand, ease);
+  }
+  .hd-link:hover { gap: 11px; }
+  .hd-nav-link { transition: color .2s ease; }
+  .hd-nav-link:hover { color: var(--hd-paper-50) !important; }
+  .hd-illus {
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--hd-forest-700);
+    background: var(--hd-lime-300);
+    border-radius: 999px;
+    padding: 4px 12px;
+    display: inline-block;
+  }
+  .hd-onepager { transition: background .2s ease, border-color .2s ease; }
+  .hd-onepager:hover { background: var(--hd-paper-100, #F3EFE7); border-color: var(--hd-sage) !important; }
+</style>
+</helmet>
+<div style="background: var(--bg-page); min-height: 100vh; font-family: var(--font-sans);">
+
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(14,46,40,0.96); backdrop-filter: saturate(140%) blur(10px); border-bottom: 1px solid rgba(250,247,242,0.14);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 18px 40px; display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="Home.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+          <img src="assets/logos/mark-lime.png" alt="" style="height: 32px;">
+          <span style="font-weight: 700; font-size: 17px; color: var(--hd-lime-400); letter-spacing: .01em;">Happy<span style="color: var(--hd-paper-50); font-weight: 400;"> Dietitian</span></span>
+        </a>
+      </div>
+      <nav style="display: flex; align-items: center; gap: 30px;">
+        <a href="how-it-works.html" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: rgba(250,247,242,0.62); text-decoration: none;">How it works</a>
+        <a href="Solutions.html" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: rgba(250,247,242,0.62); text-decoration: none;">Solutions</a>
+        <a href="evidence-and-trust.html" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: rgba(250,247,242,0.62); text-decoration: none;">Evidence &amp; trust</a>
+        <a href="#about" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: var(--hd-lime-400); text-decoration: none;">About</a>
+      </nav>
+      <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="on-forest" size="sm" hint-size="200px,40px">Book a pilot conversation</x-import>
+    </div>
+  </header>
+
+  <!-- 1 · Not-just-for-profit / mission -->
+  <section id="about" data-screen-label="About & contact" style="background: var(--bg-forest); color: var(--text-on-forest); position: relative; overflow: hidden;">
+    <img src="assets/logos/mark-lime.png" alt="" aria-hidden="true" style="position: absolute; right: -150px; top: -30px; height: 640px; opacity: 0.06; pointer-events: none;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 92px 40px 100px; position: relative;">
+      <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" on-forest="{{ true }}" dot="{{ true }}" hint-size="180px,38px">Not-just-for-profit</x-import>
+      <h1 style="margin-top: 28px; font-size: 60px; line-height: 1.06; letter-spacing: -0.02em; font-weight: 600; color: var(--hd-paper-50); max-width: 980px;">We exist because we found a gap others step <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500; color: var(--hd-lime-400);">over</span>.</h1>
+      <div style="margin-top: 30px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: start;">
+        <p style="font-size: 21px; line-height: 1.6; color: rgba(250,247,242,0.72);">Standard health programmes reach the people who are already engaged, already informed, already well. The people they consistently miss are those with low health literacy and lower incomes — the people who need support most.</p>
+        <div style="padding-top: 6px;">
+          <p style="font-size: 18px; line-height: 1.65; color: rgba(250,247,242,0.6);">We're not-just-for-profit. We didn't start with a product looking for a market — we started with a gap, and built the simplest thing that could close it. Reaching those people is the whole point, not a side effect.</p>
+          <div style="margin-top: 26px; display: flex; gap: 10px; flex-wrap: wrap;">
+            <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Badge" tone="lime" hint-size="92px,30px">Personal</x-import>
+            <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Badge" tone="sage" hint-size="130px,30px">Evidence-based</x-import>
+            <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Badge" tone="sky" hint-size="80px,30px">Warm</x-import>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Knowledge-gap stories -->
+  <section style="background: var(--bg-page);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 100px 40px;">
+      <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" dot="{{ true }}" hint-size="170px,38px">Why it matters</x-import>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-top: 22px;">
+        <h2 style="font-size: 46px; line-height: 1.1; letter-spacing: -0.02em; max-width: 700px; color: var(--text-strong);">Often, people simply don't <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500;">know</span>.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: var(--text-muted); max-width: 360px;">Not a willpower problem — an information one. These are the gaps a dietitian closes in a single conversation.</p>
+      </div>
+
+      <div style="margin-top: 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <sc-for list="{{ stories }}" as="s" hint-placeholder-count="2">
+          <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Card" ground="paper" elevation="border" padding="lg" hint-size="100%,300px">
+            <div style="display: flex; flex-direction: column; height: 100%;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hd-sage);">{{ s.place }}</span>
+                <span class="hd-illus">Illustrative</span>
+              </div>
+              <h3 style="margin-top: 16px; font-size: 25px; font-weight: 600; line-height: 1.18; color: var(--text-strong);">{{ s.headline }}</h3>
+              <p style="margin-top: 14px; font-size: 16.5px; line-height: 1.6; color: var(--text-body); flex: 1;">{{ s.body }}</p>
+              <p style="margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border-subtle); font-size: 14px; line-height: 1.5; color: var(--text-muted);">{{ s.lesson }}</p>
+            </div>
+          </x-import>
+        </sc-for>
+      </div>
+      <p style="margin-top: 20px; font-size: 13.5px; color: var(--text-muted);">Anecdotes shown are illustrative placeholders pending sourcing and approval — not yet verified accounts.</p>
+    </div>
+  </section>
+
+  <!-- 3 · Team & clinical credibility -->
+  <section style="background: var(--bg-forest); color: var(--text-on-forest); position: relative; overflow: hidden; border-top: 1px solid rgba(250,247,242,0.14);">
+    <img src="assets/logos/mark-lime.png" alt="" aria-hidden="true" style="position: absolute; left: -140px; bottom: -150px; height: 520px; opacity: 0.06; pointer-events: none;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 96px 40px; position: relative;">
+      <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: start;">
+        <div>
+          <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" on-forest="{{ true }}" dot="{{ true }}" hint-size="240px,38px">Team &amp; clinical credibility</x-import>
+          <h2 style="margin-top: 22px; font-size: 44px; line-height: 1.1; letter-spacing: -0.02em; color: var(--hd-paper-50);">Dietitian-led, from the first line of <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500; color: var(--hd-lime-400);">script</span>.</h2>
+          <p style="margin-top: 20px; font-size: 18px; line-height: 1.65; color: rgba(250,247,242,0.66); max-width: 480px;">Every video and every answer traces back to registered dietitians. The technology scales their reach; it never replaces their judgement.</p>
+        </div>
+        <div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; border-bottom: 1px solid rgba(250,247,242,0.14); padding-bottom: 36px;">
+            <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Stat" value="[ XX ]" label="registered dietitians" onForest="{{ true }}" hint-size="150px,86px"></x-import>
+            <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Stat" value="[ XX+ ]" highlight="yrs" label="combined experience" onForest="{{ true }}" hint-size="150px,86px"></x-import>
+            <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Stat" value="100%" label="content clinically reviewed" onForest="{{ true }}" hint-size="150px,86px"></x-import>
+          </div>
+          <div style="margin-top: 36px; display: flex; flex-direction: column; gap: 18px;">
+            <sc-for list="{{ credibility }}" as="c" hint-placeholder-count="3">
+              <div style="display: flex; gap: 13px; align-items: flex-start;">
+                <span style="margin-top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--hd-sage); flex: none;"></span>
+                <div>
+                  <span style="font-size: 17px; font-weight: 600; color: var(--hd-paper-50);">{{ c.title }}</span>
+                  <span style="font-size: 17px; color: rgba(250,247,242,0.62);"> — {{ c.body }}</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Contact / Book a pilot -->
+  <section id="contact" data-screen-label="Contact" style="background: var(--bg-page);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 100px 40px;">
+      <div style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 72px; align-items: start;">
+        <div>
+          <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" dot="{{ true }}" hint-size="150px,38px">Book a pilot</x-import>
+          <h2 style="margin-top: 22px; font-size: 44px; line-height: 1.1; letter-spacing: -0.02em; color: var(--text-strong);">Tell us who you're trying to <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500;">reach</span>.</h2>
+          <p style="margin-top: 20px; font-size: 18px; line-height: 1.65; color: var(--text-body);">A short conversation, scoped to your population. We'll agree the measures up front and show you what a pilot could look like.</p>
+          <div style="margin-top: 30px; display: flex; gap: 13px; align-items: flex-start; background: var(--hd-lime-200, #EAF0D4); border: 1px solid var(--hd-lime-300); border-radius: var(--radius-lg, 20px); padding: 22px 24px;">
+            <span style="margin-top: 5px; width: 9px; height: 9px; border-radius: 50%; background: var(--hd-sage); flex: none;"></span>
+            <p style="font-size: 16px; line-height: 1.55; color: var(--hd-forest-700);"><span style="font-weight: 600; color: var(--hd-forest-800);">No prices on the site.</span> Price depends on segment and scale — so let's talk first, then put a number to it.</p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Card" ground="paper" elevation="soft" padding="lg" hint-size="100%,560px">
+          <div style="display: flex; flex-direction: column; gap: 22px;">
+            <div>
+              <span style="font-family: var(--font-sans); font-size: 13px; font-weight: 600; color: var(--text-strong); display: block; margin-bottom: 10px;">I'm getting in touch as a…</span>
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Tabs" tabs="{{ segmentTabs }}" value="insurer" hint-size="100%,46px"></x-import>
+              <p style="margin-top: 8px; font-size: 13px; color: var(--text-muted);">We'll route your enquiry to the right team and tailor the conversation.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Input" label="Full name" placeholder="Your name" hint-size="100%,72px"></x-import>
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Input" label="Work email" type="email" placeholder="you@organisation.org" hint-size="100%,72px"></x-import>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Input" label="Organisation" placeholder="Organisation name" hint-size="100%,72px"></x-import>
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Input" label="Population to reach" placeholder="Roughly how many people" hint-size="100%,72px"></x-import>
+            </div>
+            <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Input" label="What are you trying to achieve?" placeholder="A sentence or two on the people you're trying to reach" hint-size="100%,72px"></x-import>
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 4px;">
+              <span style="font-size: 13px; color: var(--text-muted); max-width: 280px;">We'll only use these details to reply. GDPR-compliant, EU servers.</span>
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="primary" size="lg" hint-size="230px,54px">Book a pilot conversation</x-import>
+            </div>
+          </div>
+        </x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · One-pagers -->
+  <section style="background: var(--bg-page); border-top: 1px solid var(--border-subtle);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 92px 40px 100px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap;">
+        <div style="max-width: 600px;">
+          <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" dot="{{ true }}" hint-size="130px,38px">One-pagers</x-import>
+          <h2 style="margin-top: 22px; font-size: 40px; line-height: 1.12; letter-spacing: -0.02em; color: var(--text-strong);">Take the summary to your <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500;">committee</span>.</h2>
+        </div>
+        <p style="font-size: 16px; line-height: 1.6; color: var(--text-muted); max-width: 320px;">One page per market — the case, the scope and the measures, ready to forward.</p>
+      </div>
+      <div style="margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <sc-for list="{{ onepagers }}" as="o" hint-placeholder-count="3">
+          <a href="#" class="hd-onepager" style="text-decoration: none; display: flex; flex-direction: column; gap: 14px; background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 20px); padding: 28px;">
+            <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hd-sage);">{{ o.kicker }}</span>
+            <span style="font-size: 21px; font-weight: 600; color: var(--text-strong);">{{ o.title }}</span>
+            <span class="hd-link" style="margin-top: 4px;">Download PDF <span aria-hidden="true">↓</span></span>
+          </a>
+        </sc-for>
+      </div>
+      <p style="margin-top: 18px; font-size: 13.5px; color: var(--text-muted);">PDF links are placeholders — final one-pagers to be added.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: var(--bg-forest); color: var(--text-on-forest); border-top: 1px solid rgba(250,247,242,0.14);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 72px 40px 56px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+        <div style="max-width: 380px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="assets/logos/mark-lime.png" alt="" style="height: 30px;">
+            <span style="font-weight: 700; font-size: 16px; color: var(--hd-lime-400);">Happy<span style="color: var(--hd-paper-50); font-weight: 400;"> Dietitian</span></span>
+          </div>
+          <p style="margin-top: 18px; font-size: 16px; line-height: 1.6; color: rgba(250,247,242,0.62);">A registered dietitian and day-to-day support for the people health programmes miss.</p>
+          <div style="margin-top: 24px;">
+            <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="on-forest" size="md" hint-size="200px,46px">Book a pilot conversation</x-import>
+          </div>
+        </div>
+        <div style="display: flex; gap: 64px; flex-wrap: wrap;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250,247,242,0.4);">Explore</span>
+            <a href="how-it-works.html" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">How it works</a>
+            <a href="Solutions.html" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">Solutions</a>
+            <a href="evidence-and-trust.html" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">Evidence &amp; trust</a>
+            <a href="#about" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">About</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250,247,242,0.4);">Compliance</span>
+            <span style="font-size: 15px; color: rgba(250,247,242,0.7);">GDPR-compliant</span>
+            <span style="font-size: 15px; color: rgba(250,247,242,0.7);">EU-based servers</span>
+            <span style="font-size: 15px; color: rgba(250,247,242,0.7);">Not a medical device</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(250,247,242,0.14); font-size: 13.5px; color: rgba(250,247,242,0.4);">© 2026 Happy Dietitian. No prices on the site — pricing depends on segment and scale; let's talk.</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stories: [
+        { place: 'Tanzania · clinic', headline: 'Pregnant women who didn\u2019t know they were allowed to drink water', body: 'In one clinic, a dietitian met expectant mothers who believed water was off-limits during pregnancy. No campaign had ever reached them \u2014 the information simply never arrived. A short conversation changed it.', lesson: 'The barrier wasn\u2019t motivation. It was a basic fact nobody had told them.' },
+        { place: 'United States · families', headline: 'Small children given Diet Coke in their sippy cups', body: 'Caregivers, doing their best, filled toddlers\u2019 cups with diet soda \u2014 unaware of what \u201cdiet\u201d does and doesn\u2019t mean for a small child. Not neglect; a gap in everyday nutrition knowledge.', lesson: 'When no one explains, people fill the gap with a reasonable-looking guess.' },
+      ],
+      credibility: [
+        { title: 'Built by dietitians', body: 'the curriculum and answers are authored and reviewed by registered professionals.' },
+        { title: 'Grounded in dietetics', body: 'evidence-based guidance, never fad diets or trends.' },
+        { title: 'Clear clinical boundary', body: 'medical questions are always referred back to a doctor or dietitian.' },
+      ],
+      segmentTabs: [
+        { label: 'Insurer / B2B', value: 'insurer' },
+        { label: 'Community centre', value: 'community' },
+        { label: 'Patient organisation', value: 'patient' },
+      ],
+      onepagers: [
+        { kicker: 'For payers', title: 'Insurers & B2B', },
+        { kicker: 'For municipal networks', title: 'Community centres' },
+        { kicker: 'For advocacy groups', title: 'Patient organisations' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
