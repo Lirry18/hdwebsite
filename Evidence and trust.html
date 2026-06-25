@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Dietitian — Evidence &amp; trust</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  .hd-ph {
+    font-style: normal;
+    color: var(--hd-forest-700);
+    background: var(--hd-lime-300);
+    border-radius: 6px;
+    padding: 0 8px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    white-space: nowrap;
+  }
+  .hd-ph-f {
+    color: var(--hd-lime-400);
+    background: rgba(215,228,168,0.14);
+    border: 1px dashed rgba(215,228,168,0.5);
+  }
+  .hd-link {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--hd-forest-800);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    transition: gap .2s var(--ease-brand, ease);
+  }
+  .hd-link:hover { gap: 11px; }
+  .hd-nav-link { transition: color .2s ease; }
+  .hd-nav-link:hover { color: var(--hd-paper-50) !important; }
+  .hd-feat { display: flex; gap: 13px; align-items: flex-start; }
+  .hd-feat .tick { margin-top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--hd-sage); flex: none; }
+</style>
+</helmet>
+<div style="background: var(--bg-page); min-height: 100vh; font-family: var(--font-sans);">
+
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(14,46,40,0.96); backdrop-filter: saturate(140%) blur(10px); border-bottom: 1px solid rgba(250,247,242,0.14);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 18px 40px; display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="Home.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+          <img src="assets/logos/mark-lime.png" alt="" style="height: 32px;">
+          <span style="font-weight: 700; font-size: 17px; color: var(--hd-lime-400); letter-spacing: .01em;">Happy<span style="color: var(--hd-paper-50); font-weight: 400;"> Dietitian</span></span>
+        </a>
+      </div>
+      <nav style="display: flex; align-items: center; gap: 30px;">
+        <a href="How it works.html" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: rgba(250,247,242,0.62); text-decoration: none;">How it works</a>
+        <a href="Solutions.html" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: rgba(250,247,242,0.62); text-decoration: none;">Solutions</a>
+        <a href="#evidence" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: var(--hd-lime-400); text-decoration: none;">Evidence &amp; trust</a>
+        <a href="#" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: rgba(250,247,242,0.62); text-decoration: none;">About</a>
+      </nav>
+      <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="on-forest" size="sm" hint-size="200px,40px">Book a pilot conversation</x-import>
+    </div>
+  </header>
+
+  <!-- 1 · Evidence -->
+  <section id="evidence" data-screen-label="Evidence & trust" style="background: var(--bg-forest); color: var(--text-on-forest); position: relative; overflow: hidden;">
+    <img src="assets/logos/mark-lime.png" alt="" aria-hidden="true" style="position: absolute; right: -150px; top: -30px; height: 620px; opacity: 0.06; pointer-events: none;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 88px 40px 96px; position: relative;">
+      <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" on-forest="{{ true }}" dot="{{ true }}" hint-size="110px,38px">Evidence</x-import>
+      <h1 style="margin-top: 28px; font-size: 62px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 600; color: var(--hd-paper-50); max-width: 920px;">Proven where it's hardest to <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500; color: var(--hd-lime-400);">reach</span>.</h1>
+      <p style="margin-top: 26px; font-size: 20px; line-height: 1.6; max-width: 640px; color: rgba(250,247,242,0.66);">We don't lead with a launch story. We lead with reach — into exactly the groups standard health programmes consistently miss.</p>
+
+      <!-- Rollout timeline -->
+      <div style="margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <sc-for list="{{ rollout }}" as="r" hint-placeholder-count="3">
+          <div style="border-top: 2px solid rgba(250,247,242,0.16); padding-top: 22px;">
+            <div style="font-family: var(--font-highlight); font-style: italic; font-size: 22px; color: var(--hd-lime-400);">{{ r.phase }}</div>
+            <h3 style="margin-top: 12px; font-size: 21px; font-weight: 600; color: var(--hd-paper-50);">{{ r.title }}</h3>
+            <p style="margin-top: 10px; font-size: 16px; line-height: 1.6; color: rgba(250,247,242,0.62);">{{ r.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- Headline reach figure -->
+      <div style="margin-top: 32px; border: 1px solid rgba(250,247,242,0.14); border-radius: var(--radius-lg, 20px); background: rgba(250,247,242,0.04); padding: 44px;">
+        <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center;">
+          <div>
+            <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hd-lime-400);">Reach into hard-to-reach groups</span>
+            <div style="margin-top: 14px; font-size: 80px; line-height: 1; font-weight: 600; letter-spacing: -0.03em; color: var(--hd-lime-400);"><span class="hd-ph hd-ph-f" style="font-size: 50px;">[ reach figure ]</span></div>
+            <p style="margin-top: 18px; font-size: 17px; line-height: 1.55; color: rgba(250,247,242,0.7); max-width: 320px;">people reached in groups standard programmes consistently miss.</p>
+          </div>
+          <div style="border-left: 1px solid rgba(250,247,242,0.14); padding-left: 48px;">
+            <p style="font-size: 18px; line-height: 1.6; color: rgba(250,247,242,0.66);">Rolled out first in <span class="hd-ph hd-ph-f">[ a major Dutch city ]</span>, then nationally, together with <span class="hd-ph hd-ph-f">[ a major insurer ]</span> — with strong, measurable reach into low-health-literacy and lower-income groups.</p>
+            <p style="margin-top: 16px; font-size: 13.5px; color: rgba(250,247,242,0.4);">Figures and partner names to be confirmed and approved before publishing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Reach & outcomes -->
+  <section style="background: var(--bg-page);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 100px 40px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap;">
+        <div style="max-width: 640px;">
+          <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" dot="{{ true }}" hint-size="180px,38px">Reach &amp; outcomes</x-import>
+          <h2 style="margin-top: 22px; font-size: 46px; line-height: 1.1; letter-spacing: -0.02em; color: var(--text-strong);">Outcomes you can audit — not satisfaction <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500;">scores</span>.</h2>
+        </div>
+        <p style="font-size: 17px; line-height: 1.6; color: var(--text-muted); max-width: 360px;">A happy survey doesn't lower a cost curve. We report on what actually moves population health, in numbers your team can verify.</p>
+      </div>
+
+      <!-- Outcome metric cards -->
+      <div style="margin-top: 52px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <sc-for list="{{ outcomes }}" as="o" hint-placeholder-count="3">
+          <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Card" ground="paper" elevation="border" padding="lg" hint-size="100%,200px">
+            <div style="display: flex; flex-direction: column; height: 100%;">
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Stat" value="{{ o.value }}" label="{{ o.label }}" hint-size="180px,86px"></x-import>
+              <p style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-subtle); font-size: 15px; line-height: 1.55; color: var(--text-muted);">{{ o.body }}</p>
+            </div>
+          </x-import>
+        </sc-for>
+      </div>
+
+      <!-- What we measure vs. don't -->
+      <div style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Card" ground="lime" elevation="none" padding="lg" hint-size="100%,240px">
+          <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hd-forest-700);">What we report</span>
+          <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 14px;">
+            <sc-for list="{{ weReport }}" as="w" hint-placeholder-count="4">
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="margin-top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--hd-sage); flex: none;"></span>
+                <span style="font-size: 16px; line-height: 1.5; color: var(--hd-forest-800);">{{ w }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </x-import>
+        <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Card" ground="paper" elevation="border" padding="lg" hint-size="100%,240px">
+          <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted);">What we don't lean on</span>
+          <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 14px;">
+            <sc-for list="{{ weDont }}" as="d" hint-placeholder-count="3">
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="margin-top: 5px; width: 14px; height: 1.5px; background: var(--text-muted); flex: none;"></span>
+                <span style="font-size: 16px; line-height: 1.5; color: var(--text-muted);">{{ d }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Compliance -->
+  <section id="trust" style="background: var(--bg-forest); color: var(--text-on-forest); position: relative; overflow: hidden; border-top: 1px solid rgba(250,247,242,0.14);">
+    <img src="assets/logos/mark-lime.png" alt="" aria-hidden="true" style="position: absolute; left: -130px; bottom: -150px; height: 520px; opacity: 0.06; pointer-events: none;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 96px 40px; position: relative;">
+      <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" on-forest="{{ true }}" dot="{{ true }}" hint-size="140px,38px">Compliance</x-import>
+      <h2 style="margin-top: 22px; font-size: 46px; line-height: 1.1; letter-spacing: -0.02em; color: var(--hd-paper-50); max-width: 680px;">Safe by scope, and by <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500; color: var(--hd-lime-400);">design</span>.</h2>
+      <p style="margin-top: 22px; font-size: 18px; line-height: 1.6; color: rgba(250,247,242,0.66); max-width: 600px;">Built to clear procurement and data-protection review without surprises. The boundaries are deliberate.</p>
+
+      <div style="margin-top: 52px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <sc-for list="{{ compliance }}" as="c" hint-placeholder-count="6">
+          <div style="border: 1px solid rgba(250,247,242,0.14); border-radius: var(--radius-lg, 20px); background: rgba(250,247,242,0.04); padding: 28px;">
+            <span style="display: inline-flex; width: 12px; height: 12px; border-radius: 50%; background: var(--hd-sage);"></span>
+            <h3 style="margin-top: 18px; font-size: 19px; font-weight: 600; color: var(--hd-paper-50);">{{ c.title }}</h3>
+            <p style="margin-top: 10px; font-size: 15.5px; line-height: 1.6; color: rgba(250,247,242,0.62);">{{ c.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section style="background: var(--bg-page);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 96px 40px; text-align: center;">
+      <h2 style="font-size: 48px; line-height: 1.08; letter-spacing: -0.02em; color: var(--text-strong); max-width: 700px; margin: 0 auto;">Ready to see the evidence against your own <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500;">population</span>?</h2>
+      <p style="margin-top: 20px; font-size: 19px; line-height: 1.6; color: var(--text-body); max-width: 540px; margin-left: auto; margin-right: auto;">Start with a pilot. We'll agree the measures up front, so the numbers mean something to your board.</p>
+      <div style="margin-top: 36px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="primary" size="lg" hint-size="230px,54px">Book a pilot conversation</x-import>
+        <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="ghost" size="lg" hint-size="160px,54px">See it in action</x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: var(--bg-forest); color: var(--text-on-forest); border-top: 1px solid rgba(250,247,242,0.14);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 72px 40px 56px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+        <div style="max-width: 380px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="assets/logos/mark-lime.png" alt="" style="height: 30px;">
+            <span style="font-weight: 700; font-size: 16px; color: var(--hd-lime-400);">Happy<span style="color: var(--hd-paper-50); font-weight: 400;"> Dietitian</span></span>
+          </div>
+          <p style="margin-top: 18px; font-size: 16px; line-height: 1.6; color: rgba(250,247,242,0.62);">A registered dietitian and day-to-day support for the people health programmes miss.</p>
+          <div style="margin-top: 24px;">
+            <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="on-forest" size="md" hint-size="200px,46px">Book a pilot conversation</x-import>
+          </div>
+        </div>
+        <div style="display: flex; gap: 64px; flex-wrap: wrap;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250,247,242,0.4);">Explore</span>
+            <a href="How it works.html" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">How it works</a>
+            <a href="Solutions.html" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">Solutions</a>
+            <a href="#evidence" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">Evidence &amp; trust</a>
+            <a href="Home.html" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">Home</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250,247,242,0.4);">Compliance</span>
+            <span style="font-size: 15px; color: rgba(250,247,242,0.7);">GDPR-compliant</span>
+            <span style="font-size: 15px; color: rgba(250,247,242,0.7);">EU-based servers</span>
+            <span style="font-size: 15px; color: rgba(250,247,242,0.7);">Not a medical device</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(250,247,242,0.14); font-size: 13.5px; color: rgba(250,247,242,0.4);">© 2026 Happy Dietitian. No prices on the site — pricing depends on segment and scale; let's talk.</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      rollout: [
+        { phase: 'Phase one', title: 'A major Dutch city', body: 'First rolled out city-wide in [ a major Dutch city ], focused on the neighbourhoods standard programmes reach least.' },
+        { phase: 'Phase two', title: 'National, with an insurer', body: 'Scaled nationally together with [ a major insurer ] — same zero-threshold model, far wider reach.' },
+        { phase: 'Throughout', title: 'Into hard-to-reach groups', body: 'Strong, measured reach into low-health-literacy and lower-income groups at every stage.' },
+      ],
+      outcomes: [
+        { value: '[ XX% ]', label: 'reached vs. baseline programme', body: 'Participation among groups standard outreach typically misses.' },
+        { value: '[ XX% ]', label: 'completed the core series', body: 'Followed the six-week series through to the end, not just signed up.' },
+        { value: '[ X.Xx ]', label: 'engagement vs. self-guided', body: 'Sustained interaction with the AI dietitian over the access period.' },
+      ],
+      weReport: [
+        'Reach into defined hard-to-reach segments',
+        'Programme completion and sustained engagement',
+        'Behaviour and lifestyle change indicators',
+        'Outcome data structured for actuarial review',
+      ],
+      weDont: [
+        'Headline satisfaction scores in isolation',
+        'Vanity sign-up totals',
+        'Self-reported \u201cfeel-good\u201d metrics alone',
+      ],
+      compliance: [
+        { title: 'GDPR-compliant', body: 'Built to the GDPR from the ground up, with data processing agreements ready for your DPO.' },
+        { title: 'European servers', body: 'All data is processed and stored on servers within the EU. No transfers outside the bloc.' },
+        { title: 'Not a medical device', body: 'A lifestyle and education service, so no CE marking is required — and none is implied.' },
+        { title: 'No medical data stored', body: 'We don\u2019t collect or store personal medical records. The service simply doesn\u2019t need them.' },
+        { title: 'Scope referred out', body: 'Any medical question is referred straight back to the participant\u2019s own doctor or dietitian.' },
+        { title: 'Clear boundaries', body: 'Lifestyle and nutrition education only — never diagnosis, never treatment.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Dietitian — How it works &amp; demo</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  .hd-ph {
+    font-style: normal;
+    color: var(--hd-forest-700);
+    background: var(--hd-lime-300);
+    border-radius: 6px;
+    padding: 0 8px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    white-space: nowrap;
+  }
+  .hd-ph-f {
+    color: var(--hd-lime-400);
+    background: rgba(215,228,168,0.14);
+    border: 1px dashed rgba(215,228,168,0.5);
+  }
+  .hd-link {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--hd-forest-800);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    transition: gap .2s var(--ease-brand, ease);
+  }
+  .hd-link:hover { gap: 11px; }
+  .hd-nav-link { transition: color .2s ease; }
+  .hd-nav-link:hover { color: var(--hd-paper-50) !important; }
+  .hd-chan {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 11px 18px; border-radius: 999px;
+    border: 1.5px solid rgba(250,247,242,0.2);
+    background: rgba(250,247,242,0.05);
+    font-size: 15px; font-weight: 500; color: var(--hd-paper-50);
+  }
+  .hd-chan span.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--hd-lime-400); flex: none; }
+  .hd-track-row { transition: background .2s ease; }
+  .hd-track-row:hover { background: var(--hd-paper-100, #F3EFE7); }
+</style>
+</helmet>
+<div style="background: var(--bg-page); min-height: 100vh; font-family: var(--font-sans);">
+
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(14,46,40,0.96); backdrop-filter: saturate(140%) blur(10px); border-bottom: 1px solid rgba(250,247,242,0.14);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 18px 40px; display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="Home.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+          <img src="assets/logos/mark-lime.png" alt="" style="height: 32px;">
+          <span style="font-weight: 700; font-size: 17px; color: var(--hd-lime-400); letter-spacing: .01em;">Happy<span style="color: var(--hd-paper-50); font-weight: 400;"> Dietitian</span></span>
+        </a>
+      </div>
+      <nav style="display: flex; align-items: center; gap: 30px;">
+        <a href="#how" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: var(--hd-lime-400); text-decoration: none;">How it works</a>
+        <a href="#" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: rgba(250,247,242,0.62); text-decoration: none;">Solutions</a>
+        <a href="#" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: rgba(250,247,242,0.62); text-decoration: none;">Evidence &amp; trust</a>
+        <a href="#" class="hd-nav-link" style="font-size: 14.5px; font-weight: 500; color: rgba(250,247,242,0.62); text-decoration: none;">About</a>
+      </nav>
+      <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="on-forest" size="sm" hint-size="170px,40px">Book a conversation</x-import>
+    </div>
+  </header>
+
+  <!-- 1 · How it works -->
+  <section id="how" data-screen-label="How it works" style="background: var(--bg-forest); color: var(--text-on-forest); position: relative; overflow: hidden;">
+    <img src="assets/logos/mark-lime.png" alt="" aria-hidden="true" style="position: absolute; right: -150px; top: -40px; height: 620px; opacity: 0.06; pointer-events: none;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 92px 40px 100px; position: relative;">
+      <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" on-forest="{{ true }}" dot="{{ true }}" hint-size="150px,38px">How it works</x-import>
+      <h1 style="margin-top: 28px; font-size: 64px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 600; color: var(--hd-paper-50); max-width: 880px;">No app. No login. Support that simply <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500; color: var(--hd-lime-400);">arrives</span>.</h1>
+      <p style="margin-top: 26px; font-size: 20px; line-height: 1.6; max-width: 620px; color: rgba(250,247,242,0.66);">The organisation signs people up. Each participant gets instant access through a channel they already use every day — nothing to download, no account to create.</p>
+
+      <!-- Zero-threshold differentiator block -->
+      <div style="margin-top: 52px; border: 1px solid rgba(250,247,242,0.14); border-radius: var(--radius-lg, 20px); background: rgba(250,247,242,0.04); padding: 44px;">
+        <div style="display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center;">
+          <div>
+            <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hd-lime-400);">The biggest difference</span>
+            <h2 style="margin-top: 14px; font-size: 34px; line-height: 1.14; letter-spacing: -0.02em; color: var(--hd-paper-50);">Zero-threshold access</h2>
+            <p style="margin-top: 16px; font-size: 17px; line-height: 1.6; color: rgba(250,247,242,0.66);">Most programmes lose people at the download screen. We meet participants inside the messaging app already on their phone — so the people hardest to reach actually arrive.</p>
+          </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(250,247,242,0.4); margin-bottom: 18px;">Works where people already are</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+              <span class="hd-chan"><span class="dot"></span>WhatsApp</span>
+              <span class="hd-chan"><span class="dot"></span>Teams</span>
+              <span class="hd-chan"><span class="dot"></span>Telegram</span>
+              <span class="hd-chan"><span class="dot"></span>Signal</span>
+              <span class="hd-chan"><span class="dot"></span>WeChat</span>
+              <span class="hd-chan"><span class="dot"></span>Slack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-step flow -->
+      <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; border-top: 1px solid rgba(250,247,242,0.14); padding-top: 44px;">
+        <sc-for list="{{ flow }}" as="f" hint-placeholder-count="3">
+          <div>
+            <div style="font-family: var(--font-highlight); font-style: italic; font-size: 24px; color: var(--hd-lime-400);">{{ f.n }}</div>
+            <h3 style="margin-top: 14px; font-size: 20px; font-weight: 600; color: var(--hd-paper-50);">{{ f.title }}</h3>
+            <p style="margin-top: 12px; font-size: 16px; line-height: 1.6; color: rgba(250,247,242,0.62);">{{ f.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · The two parts -->
+  <section style="background: var(--bg-page);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 100px 40px;">
+      <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" dot="{{ true }}" hint-size="140px,38px">The two parts</x-import>
+      <h2 style="margin-top: 22px; font-size: 46px; line-height: 1.1; letter-spacing: -0.02em; max-width: 720px; color: var(--text-strong);">A guided series, and a dietitian who never <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500;">clocks off</span>.</h2>
+      <div style="margin-top: 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+
+        <!-- Part 1 -->
+        <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Card" ground="paper" elevation="border" padding="lg" hint-size="100%,380px">
+          <div style="display: flex; flex-direction: column; height: 100%;">
+            <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hd-sage);">Part one</span>
+            <h3 style="margin-top: 14px; font-size: 26px; font-weight: 600; color: var(--text-strong);">A structured video series</h3>
+            <p style="margin-top: 12px; font-size: 16px; line-height: 1.6; color: var(--text-muted);">Six weeks, eighteen short videos — a clear arc built and presented by registered dietitians. Small changes, paced so they actually stick.</p>
+            <div style="margin-top: auto; padding-top: 26px; display: flex; gap: 40px; border-top: 1px solid var(--border-subtle);">
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Stat" value="6" highlight="weeks" label="guided programme" hint-size="150px,72px"></x-import>
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Stat" value="18" label="short videos" hint-size="120px,72px"></x-import>
+            </div>
+          </div>
+        </x-import>
+
+        <!-- Part 2 -->
+        <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Card" ground="paper" elevation="border" padding="lg" hint-size="100%,380px">
+          <div style="display: flex; flex-direction: column; height: 100%;">
+            <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hd-sage);">Part two</span>
+            <h3 style="margin-top: 14px; font-size: 26px; font-weight: 600; color: var(--text-strong);">An AI dietitian, on call</h3>
+            <p style="margin-top: 12px; font-size: 16px; line-height: 1.6; color: var(--text-muted);">Everyday questions answered in the moment — in the participant's own language and at their own level. Twelve months of access, so support lasts well past the series.</p>
+            <div style="margin-top: auto; padding-top: 26px; display: flex; gap: 40px; border-top: 1px solid var(--border-subtle);">
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Stat" value="24/7" label="always available" hint-size="150px,72px"></x-import>
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Stat" value="12" highlight="months" label="of access" hint-size="140px,72px"></x-import>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- Scope boundary -->
+      <div style="margin-top: 24px; display: flex; gap: 18px; align-items: flex-start; background: var(--hd-lime-200, #EAF0D4); border: 1px solid var(--hd-lime-300); border-radius: var(--radius-lg, 20px); padding: 26px 30px;">
+        <span style="margin-top: 4px; width: 9px; height: 9px; border-radius: 50%; background: var(--hd-sage); flex: none;"></span>
+        <div>
+          <h4 style="font-size: 17px; font-weight: 600; color: var(--hd-forest-800);">Clear scope, by design</h4>
+          <p style="margin-top: 8px; font-size: 16px; line-height: 1.6; color: var(--hd-forest-700);">Lifestyle and nutrition education only. The service never diagnoses; any medical question is referred straight back to the participant's own doctor or dietitian. <span style="font-weight: 600;">Not a medical device.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Live demo -->
+  <section id="demo" data-screen-label="Live demo" style="background: var(--bg-forest); color: var(--text-on-forest); position: relative; overflow: hidden; border-top: 1px solid rgba(250,247,242,0.14);">
+    <img src="assets/logos/mark-lime.png" alt="" aria-hidden="true" style="position: absolute; left: -130px; bottom: -160px; height: 520px; opacity: 0.06; pointer-events: none;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 96px 40px; position: relative;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+        <div>
+          <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" on-forest="{{ true }}" dot="{{ true }}" hint-size="120px,38px">Live demo</x-import>
+          <h2 style="margin-top: 22px; font-size: 46px; line-height: 1.08; letter-spacing: -0.02em; color: var(--hd-paper-50); max-width: 540px;">Try it yourself — then <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500; color: var(--hd-lime-400);">forward</span> it on.</h2>
+          <p style="margin-top: 22px; font-size: 18px; line-height: 1.6; color: rgba(250,247,242,0.66); max-width: 480px;">No form, no gate. Open the demo, send it to a colleague, share it in a committee — it's built to travel. This is the asset buyers ask us for most.</p>
+          <div style="margin-top: 36px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
+            <a href="[ demo-link ]" style="text-decoration: none;">
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="on-forest" size="lg" hint-size="180px,54px">Open the demo</x-import>
+            </a>
+            <span style="font-size: 14px; color: rgba(250,247,242,0.45);">Opens in your browser · nothing to install</span>
+          </div>
+          <div style="margin-top: 22px; display: inline-flex; align-items: center; gap: 8px; padding: 7px 7px 7px 16px; border: 1px solid rgba(250,247,242,0.18); border-radius: 999px;">
+            <span style="font-size: 13px; font-weight: 500; color: rgba(250,247,242,0.6);">Demo language</span>
+            <sc-for list="{{ langs }}" as="lng" hint-placeholder-count="4">
+              <button style="border: none; cursor: pointer; padding: 6px 13px; border-radius: 999px; font-family: var(--font-sans); font-size: 13px; font-weight: 600; background: {{ lng.active ? 'var(--hd-lime-400)' : 'transparent' }}; color: {{ lng.active ? 'var(--hd-forest-900)' : 'rgba(250,247,242,0.7)' }};">{{ lng.code }}</button>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- Forwardable demo card -->
+        <div style="background: rgba(250,247,242,0.05); border: 1px solid rgba(250,247,242,0.16); border-radius: var(--radius-lg, 20px); padding: 14px;">
+          <div style="background: var(--hd-paper-50); border-radius: 14px; overflow: hidden;">
+            <div style="background: var(--hd-forest-800, #163A33); padding: 14px 18px; display: flex; align-items: center; gap: 10px;">
+              <img src="assets/logos/mark-lime.png" alt="" style="height: 22px;">
+              <span style="font-size: 14px; font-weight: 600; color: var(--hd-paper-50);">Happy Dietitian</span>
+              <span style="margin-left: auto; font-size: 12px; color: rgba(250,247,242,0.5);">demo chat</span>
+            </div>
+            <div style="padding: 22px 20px; display: flex; flex-direction: column; gap: 12px; background: var(--hd-paper-100, #F3EFE7);">
+              <div style="align-self: flex-start; max-width: 78%; background: #fff; border: 1px solid var(--border-subtle); border-radius: 14px 14px 14px 4px; padding: 12px 15px; font-size: 14.5px; line-height: 1.5; color: var(--text-body);">Hi! I'm your dietitian. What did you have for lunch today?</div>
+              <div style="align-self: flex-end; max-width: 78%; background: var(--hd-lime-300); border-radius: 14px 14px 4px 14px; padding: 12px 15px; font-size: 14.5px; line-height: 1.5; color: var(--hd-forest-800);">Bread with cheese and a coffee.</div>
+              <div style="align-self: flex-start; max-width: 80%; background: #fff; border: 1px solid var(--border-subtle); border-radius: 14px 14px 14px 4px; padding: 12px 15px; font-size: 14.5px; line-height: 1.5; color: var(--text-body);">Good, that's a solid start. Let's add something fresh — shall I suggest two easy options?</div>
+            </div>
+          </div>
+          <div style="padding: 14px 8px 6px; text-align: center; font-size: 13px; color: rgba(250,247,242,0.5);">Illustrative preview · the live demo is fully interactive</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Tracks -->
+  <section style="background: var(--bg-page);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 100px 40px;">
+      <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Pill" dot="{{ true }}" hint-size="90px,38px">Tracks</x-import>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-top: 22px;">
+        <h2 style="font-size: 46px; line-height: 1.1; letter-spacing: -0.02em; max-width: 640px; color: var(--text-strong);">One foundation, then a track for the <span style="font-family: var(--font-highlight); font-style: italic; font-weight: 500;">condition</span> that matters.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: var(--text-muted); max-width: 340px;">Every participant starts with the foundations; condition tracks layer specialist guidance on top.</p>
+      </div>
+
+      <!-- Foundation -->
+      <div style="margin-top: 48px;">
+        <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Card" ground="lime" elevation="none" padding="lg" hint-size="100%,180px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
+            <div style="max-width: 620px;">
+              <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hd-forest-700);">The starting point · everyone</span>
+              <h3 style="margin-top: 12px; font-size: 30px; font-weight: 600; color: var(--hd-forest-900);">Healthy Living Foundations</h3>
+              <p style="margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--hd-forest-700);">The core six-week series — the habits, basics and confidence everything else builds on.</p>
+            </div>
+            <a href="#" class="hd-link" style="color: var(--hd-forest-900);">View the one-pager <span aria-hidden="true">→</span></a>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- Condition tracks -->
+      <div style="margin-top: 36px;">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 18px;">Condition tracks</div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <sc-for list="{{ tracks }}" as="t" hint-placeholder-count="6">
+            <a href="#" style="text-decoration: none;">
+              <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Card" ground="paper" elevation="border" padding="lg" interactive="{{ true }}" hint-size="100%,200px">
+                <div style="display: flex; flex-direction: column; height: 100%;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--hd-sage);"></span>
+                  <h4 style="margin-top: 18px; font-size: 21px; font-weight: 600; color: var(--text-strong);">{{ t.name }}</h4>
+                  <p style="margin-top: 10px; font-size: 15px; line-height: 1.55; color: var(--text-muted); flex: 1;">{{ t.body }}</p>
+                  <span class="hd-link" style="margin-top: 18px; font-size: 14px;">One-pager <span aria-hidden="true">→</span></span>
+                </div>
+              </x-import>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- Primary CTA -->
+      <div style="margin-top: 64px; display: flex; align-items: center; gap: 16px; justify-content: center;">
+        <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="primary" size="lg" hint-size="180px,54px">See it in action</x-import>
+        <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="ghost" size="lg" hint-size="190px,54px">Book a conversation</x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: var(--bg-forest); color: var(--text-on-forest); border-top: 1px solid rgba(250,247,242,0.14);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 72px 40px 56px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+        <div style="max-width: 380px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="assets/logos/mark-lime.png" alt="" style="height: 30px;">
+            <span style="font-weight: 700; font-size: 16px; color: var(--hd-lime-400);">Happy<span style="color: var(--hd-paper-50); font-weight: 400;"> Dietitian</span></span>
+          </div>
+          <p style="margin-top: 18px; font-size: 16px; line-height: 1.6; color: rgba(250,247,242,0.62);">A registered dietitian and day-to-day support for the people health programmes miss.</p>
+          <div style="margin-top: 24px;">
+            <x-import component-from-global-scope="HappyDietitianDesignSystem_a4e2ee.Button" variant="on-forest" size="md" hint-size="180px,46px">Book a conversation</x-import>
+          </div>
+        </div>
+        <div style="display: flex; gap: 64px; flex-wrap: wrap;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250,247,242,0.4);">Explore</span>
+            <a href="#how" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">How it works</a>
+            <a href="#demo" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">Live demo</a>
+            <a href="#" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">Solutions</a>
+            <a href="Home.html" class="hd-nav-link" style="font-size: 15px; color: rgba(250,247,242,0.7); text-decoration: none;">Home</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250,247,242,0.4);">Compliance</span>
+            <span style="font-size: 15px; color: rgba(250,247,242,0.7);">GDPR-compliant</span>
+            <span style="font-size: 15px; color: rgba(250,247,242,0.7);">EU-based servers</span>
+            <span style="font-size: 15px; color: rgba(250,247,242,0.7);">Not a medical device</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(250,247,242,0.14); font-size: 13.5px; color: rgba(250,247,242,0.4);">© 2026 Happy Dietitian. No prices on the site — pricing depends on segment and scale; let's talk.</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      flow: [
+        { n: '01', title: 'The organisation signs up', body: 'An insurer, community centre or patient organisation enrols its members — through one simple onboarding, at whatever scale fits.' },
+        { n: '02', title: 'The participant gets instant access', body: 'A link arrives in the messaging app they already use. They tap once and they\u2019re in. No download, no account, no password.' },
+        { n: '03', title: 'Support begins immediately', body: 'The video series and the AI dietitian are there from minute one \u2014 in their own language, at their own level.' },
+      ],
+      langs: [
+        { code: 'EN', active: true },
+        { code: 'NL', active: false },
+        { code: 'AR', active: false },
+        { code: 'TR', active: false },
+      ],
+      tracks: [
+        { name: 'Beat Diabetes', body: 'Everyday nutrition guidance for living and eating well with type 2 diabetes.' },
+        { name: 'Heart Strong', body: 'Habits that support cardiovascular health, built around real meals.' },
+        { name: 'Energy Reset', body: 'Steadier energy through the day with simple, sustainable changes.' },
+        { name: 'Gut Health', body: 'Calmer digestion and a friendlier relationship with food.' },
+        { name: 'Weight & Metabolism', body: 'A measured, non-faddy approach to weight and metabolic health.' },
+        { name: 'Lifestyle & Cancer', body: 'Gentle nutrition support for living well during and after treatment.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
