@@ -1,0 +1,39 @@
+/* ============================================================
+   Happy Dietitian — Spacing, radii, layout
+   Generous whitespace. 4px base step. The brand breathes —
+   prefer larger gaps over dense packing.
+   ============================================================ */
+:root {
+  /* Space scale (4px base) */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 */
+  --space-7: 3rem;      /* 48 */
+  --space-8: 4rem;      /* 64 */
+  --space-9: 6rem;      /* 96 */
+  --space-10: 8rem;     /* 128 */
+
+  /* Radii — soft, friendly, never sharp. The brand favours
+     fully-rounded pills for controls and generous rounding on cards. */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 40px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* Layout */
+  --container-max: 1200px;  /* @kind other */
+  --container-wide: 1360px; /* @kind other */
+  --gutter: var(--space-6); /* @kind other */
+
+  /* Border widths */
+  --border-hair: 1px;  /* @kind other */
+  --border-1: 1.5px;   /* @kind other */
+  --border-2: 2px;     /* @kind other */
+}

@@ -1,0 +1,48 @@
+/* ============================================================
+   Happy Dietitian — Typography
+   Poppins is the workhorse: everything (UI, headings, body).
+   Playfair Display italic is HIGHLIGHT ONLY — a single warm
+   word or short phrase inside a Poppins line. Never paragraphs,
+   body or UI.
+   The formula: a plain Poppins line that lands on one italic word.
+   ============================================================ */
+:root {
+  /* Families */
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-highlight: 'Playfair Display', Georgia, 'Times New Roman', serif; /* italic, highlight only */
+
+  /* Weights */
+  --fw-light: 300;   /* @kind other */
+  --fw-regular: 400; /* @kind other */
+  --fw-medium: 500;  /* @kind other */
+  --fw-semibold: 600;/* @kind other */
+  --fw-bold: 700;    /* @kind other */
+
+  /* Type scale (px-ish via rem; 1rem = 16px) */
+  --fs-display-2xl: 5rem;     /* 80 — hero marks */
+  --fs-display-xl:  3.75rem;  /* 60 */
+  --fs-display-lg:  3rem;     /* 48 */
+  --fs-h1: 2.25rem;           /* 36 */
+  --fs-h2: 1.75rem;           /* 28 */
+  --fs-h3: 1.375rem;          /* 22 */
+  --fs-h4: 1.125rem;          /* 18 */
+  --fs-body-lg: 1.125rem;     /* 18 */
+  --fs-body: 1rem;            /* 16 */
+  --fs-body-sm: 0.875rem;     /* 14 */
+  --fs-caption: 0.75rem;      /* 12 */
+  --fs-overline: 0.6875rem;   /* 11 — eyebrow / corner labels */
+
+  /* Line heights */
+  --lh-tight: 1.05;  /* @kind other */
+  --lh-snug: 1.18;   /* @kind other */
+  --lh-heading: 1.12;/* @kind other */
+  --lh-body: 1.6;    /* @kind other */
+  --lh-relaxed: 1.7; /* @kind other */
+
+  /* Letter spacing */
+  --ls-display: -0.02em;   /* @kind other */
+  --ls-heading: -0.015em;  /* @kind other */
+  --ls-body: 0em;          /* @kind other */
+  --ls-overline: 0.18em;   /* @kind other */
+  --ls-label: 0.04em;      /* @kind other */
+}

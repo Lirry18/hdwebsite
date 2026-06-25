@@ -1,0 +1,5 @@
+/* Happy Dietitian — Webfonts
+   Poppins  — the workhorse, used for everything (UI, headings, body)
+   Playfair Display — italic highlight ONLY, a single warm word in a line.
+   Loaded from Google Fonts; @font-face rules ship to consumers. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap');

@@ -1,0 +1,68 @@
+/* ============================================================
+   Happy Dietitian — Colour
+   Five brand colours from the brand book, plus the working
+   tints/shades needed for real UI (states, borders, surfaces).
+   Derived tints stay inside the brand's warm, calm family.
+   ============================================================ */
+:root {
+  /* --- Brand core (verbatim from the brand book) --- */
+  --hd-forest:   #0E2E28;  /* Deep forest — dark ground & text */
+  --hd-paper:    #FAF7F2;  /* Paper — light ground */
+  --hd-lime:     #D7E4A8;  /* Soft lime — primary accent */
+  --hd-sky:      #9EC6E0;  /* Sky blue — secondary, sparing */
+  --hd-sage:     #6FA89A;  /* Sage — logo, lines & dots only */
+
+  /* --- Forest ramp (dark greens for grounds, text, borders on light) --- */
+  --hd-forest-900: #081C18;
+  --hd-forest-800: #0E2E28;  /* = forest */
+  --hd-forest-700: #173E37;
+  --hd-forest-600: #234E46;
+  --hd-forest-500: #356A60;
+
+  /* --- Lime ramp (accent surfaces & hovers) --- */
+  --hd-lime-600: #B9CC7E;
+  --hd-lime-500: #C8D993;
+  --hd-lime-400: #D7E4A8;  /* = lime */
+  --hd-lime-300: #E3ECC1;
+  --hd-lime-200: #EFF3DC;
+
+  /* --- Paper / neutral ramp (warm off-whites + greys) --- */
+  --hd-paper-0:  #FFFFFF;
+  --hd-paper-50: #FAF7F2;  /* = paper */
+  --hd-paper-100:#F2EEE6;
+  --hd-paper-200:#E7E1D6;  /* hairline on paper */
+  --hd-stone-400:#A6A29A;  /* muted label on paper */
+  --hd-stone-500:#76726B;  /* secondary text on paper */
+  --hd-stone-600:#56534D;
+
+  /* --- Accents (sparing) --- */
+  --hd-sky-500:  #9EC6E0;  /* = sky */
+  --hd-sky-300:  #C9E0EF;
+  --hd-sage-500: #6FA89A;  /* = sage */
+  --hd-sage-300: #A6C7BD;
+
+  /* --- Semantic: light ground (paper) --- */
+  --bg-page:        var(--hd-paper-50);
+  --bg-page-0:      var(--hd-paper-0);
+  --surface-card:   var(--hd-paper-0);
+  --surface-sunken: var(--hd-paper-100);
+  --surface-accent: var(--hd-lime-400);
+  --border-subtle:  var(--hd-paper-200);
+  --border-strong:  var(--hd-forest-800);
+  --text-strong:    var(--hd-forest-800);
+  --text-body:      var(--hd-forest-700);
+  --text-muted:     var(--hd-stone-500);
+  --text-faint:     var(--hd-stone-400);
+  --text-on-accent: var(--hd-forest-800);  /* forest text on lime */
+
+  /* --- Semantic: dark ground (forest) --- */
+  --bg-forest:        var(--hd-forest-800);
+  --surface-on-forest:var(--hd-forest-700);
+  --border-on-forest: rgba(250,247,242,0.14);
+  --text-on-forest:       var(--hd-paper-50);
+  --text-on-forest-muted: rgba(250,247,242,0.62);
+  --accent-on-forest:     var(--hd-lime-400);  /* lime on forest — the primary pairing */
+
+  /* --- Focus --- */
+  --focus-ring: var(--hd-sage-500);
+}
